@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Lucy's Library</h1>
+
+<form class="form-inline" action="/books" method="post">
+<label for = "Title">Title</label>
+<input type = "text" name="Title" id="Title">
+<label for = "Author">Author</label>
+<input type="text" name="Author" id="Author">
+<label for = "Genre">Genre</label>
+<input type="text" name="Genre" id="Genre">
+<input type="submit" value="Add Book">
+</form>
+
+
+<body> 
+    {% for book in books %}
+    <div>
+        <p>
+          <b>  {{ book.title }}-  </b> {{ book.author }}-  {{ book.genre }}
+
+
+<form class="form-inline" action="/books/delete/ {{ book.title }}", method="POST">
+    <input type="submit" value="Remove Book">
+</form>
+
+        </p>
+        
+
+        {% endfor %}
+
+        <ul>
+            {% for book in add_book %}
+                <li>{{books}}</li>
+            
+            <hr>
+            
+
+        </div>
+
+        {% endfor %}
+           
+            
+            </ul>
+
+    
+    
+    
+    
+    
+    </body>
+
+
+        
+    
+
+
+
+{% endblock %} 
